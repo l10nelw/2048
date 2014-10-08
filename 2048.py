@@ -9,7 +9,9 @@ class Game:
         self._board = [[0]*size for i in range(size)]
         self._size = size
         self._moved = False
-        for i in range(int(size/2)): self._spawn([2])
+        for i in range(int(size/2)):
+            # spawn 2 numbers for 4x4 and 5x5, 3 numbers for 6x6 and 7x7, etc.
+            self._spawn([2])
         
     def _spawn(self, numlist):
         "spawn a number randomly chosen from a given list, at a random empty space"
