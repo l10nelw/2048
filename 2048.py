@@ -4,8 +4,7 @@ class Game:
     debug = False
     
     def __init__(self, size):
-        """initialise board of a given size (an integer), adding some
-        starting numbers"""
+        "initialise board of a given size (an integer), adding some starting numbers"
         self._board = [[0]*size for i in range(size)]
         self._size = size
         self._moved = False
@@ -37,7 +36,7 @@ class Game:
         self._board = [ list(row) for row in zip(*self._board) ][::-1]
 
     def _move(self):
-        "move numbers across board to the left"
+        "move numbers across board leftward"
         for row in self._board:
             lus = 0 # leftmost unoccupied space 
             for i in range(self._size):
@@ -50,7 +49,7 @@ class Game:
                     lus += 1 # LUS is now a step to the right
     
     def _merge(self):
-        "merge identical adjacent numbers to the left"
+        "merge identical adjacent numbers leftward"
         for row in self._board:
             for i in range(1, self._size): # check from the 2nd to 4th space
                 if row[i] and row[i] == row[i-1]: # check the left adjacent space
@@ -65,17 +64,16 @@ class Game:
         self._move()
 
     def _endswipe(self):
-        "complete a swipe thus: spawn a number and display the board"
+        "complete a swipe thus: spawn a number, and print the board"
         if self._moved:
             self._spawn([2,2,2,4])
-            self.display()
+            self.show()
             self._moved = False
         else:
-            self.display()
+            self.show()
         
-    def display(self):
-        """print board, and also print moved status and spawn location
-        if self.debug is non-zero"""
+    def show(self):
+        "print board, and print moved status and spawn location if self.debug is non-zero"
         for row in self._board:
             print('\t'.join(str(num) if num else '·' for num in row))
             print()
@@ -109,4 +107,3 @@ class Game:
         self._swipe()
         self._rotate()
         self._endswipe()
-        
