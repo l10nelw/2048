@@ -3,7 +3,7 @@ import random
 class Game:
     debug = False
     
-    def __init__(self, size):
+    def __init__(self, size=4):
         "initialise board of a given size (an integer), adding some starting numbers"
         self._board = [[0]*size for i in range(size)]
         self._size = size
