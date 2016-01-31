@@ -10,9 +10,12 @@
     \>>> from cli2048 import Game  
     \>>> g = Game()  
 
-3. A game has begun! Play by using the commands below. Tip: Alt+P cycles through previously entered commands.
+3. A game has begun! View the board with:
 
     \>>> g.show()  
+
+4. Play 2048 using the commands below. Tip: Alt+P cycles through previously entered commands.
+
     \>>> g.up()  
     \>>> g.down()  
     \>>> g.left()  
