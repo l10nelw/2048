@@ -31,6 +31,6 @@ Enjoy.
 
 - You can turn debug mode on and off, which displays number spawn locations and whether any numbers have moved.
 
-	g.debug = True
-	g.debug = False #default
+	g.debug = True  
+	g.debug = False #default  
 
